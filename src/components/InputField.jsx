@@ -23,13 +23,15 @@ export default function InputField({
                 />
 
                 {totalInputs > 2 && (
-                    <button
-                        type="button"
-                        className="btn btn-error"
-                        onClick={() => onRemove(index)}
-                    >
-                        ✕
-                    </button>
+                    <div className="tooltip" data-tip="Hapus Angka Ini">
+                        <button
+                            type="button"
+                            className="btn btn-error"
+                            onClick={() => onRemove(index)}
+                        >
+                            ✕
+                        </button>
+                    </div>
                 )}
             </div>
         </fieldset>
