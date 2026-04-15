@@ -1,0 +1,23 @@
+import { Link } from "react-router";
+
+const Home = () => {
+    return (<>
+        <div className="card bg-base-100 w-100 shadow-2xl">
+            <div className="card-body">
+                <h1 className="text-2xl font-bold">Kalkulator Pemula</h1>
+                <p>Silahkan pilih operasi matematika yang ingin Anda lakukan:</p>
+                <div className="divider"></div>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <Link to="/tambah" className="btn btn-neutral">(+) Penjumlahan</Link>
+                    <Link to="/bagi" className="btn btn-error">(÷) Pembagian</Link>
+                    <Link to="/kali" className="btn btn-info">(x) Perkalian</Link>
+                    <Link to="/kurang" className="btn btn-primary">(-) Pengurangan</Link>
+                </div>
+                <div>
+                     Yang Dibuat Oleh Pemula Dan Untuk Pemula
+                </div>
+            </div>
+        </div></>)
+}
+
+export default Home;
