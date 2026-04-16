@@ -21,7 +21,7 @@ export default function Bagi() {
             <div className="card-body">
                 <form className="grid grid-cols-1 gap-4" onSubmit={handleSubmit}>
                     <h1 className="text-2xl text-error font-bold">Pembagian ( ÷ )</h1>
-                    <div className="overflow-y-scroll max-h-96">
+                    <div className="overflow-y-scroll max-h-72">
                         {inputs.map((value, index) => (
                             <InputField
                                 key={index}

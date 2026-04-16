@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 export default function useOperand(operationFunction) {
     const [inputs, setInputs] = useState(["", ""]);
@@ -18,10 +19,31 @@ export default function useOperand(operationFunction) {
         setShowResult(false);
     };
 
-    const removeInput = (index) => {
-        const newInputs = inputs.filter((_, i) => i !== index);
-        setInputs(newInputs);
-        setShowResult(false);
+    const removeInput = async (index) => {
+        const confirm = await Swal.fire({
+            title: "Hapus angka ini?",
+            text: "Angka yang dihapus tidak bisa dikembalikan!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Ya, hapus!",
+            cancelButtonText: "Batal",
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6"
+        });
+
+        if (confirm.isConfirmed) {
+            const newInputs = inputs.filter((_, i) => i !== index);
+            setInputs(newInputs);
+            setShowResult(false);
+
+            Swal.fire({
+                title: "Terhapus!",
+                text: "Angka berhasil dihapus.",
+                icon: "success",
+                timer: 500,
+                showConfirmButton: false
+            });
+        }
     };
 
     const handleSubmit = (e) => {

@@ -21,7 +21,7 @@ export default function Kurang() {
             <div className="card-body">
                 <form className="grid grid-cols-1 gap-4" onSubmit={handleSubmit}>
                     <h1 className="text-2xl font-bold text-primary">Pengurangan ( - )</h1>
-                    <div className="overflow-y-scroll max-h-96">
+                    <div className="overflow-y-scroll max-h-72">
                         {inputs.map((value, index) => (
                             <InputField
                                 key={index}

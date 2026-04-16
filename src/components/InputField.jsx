@@ -16,7 +16,7 @@ export default function InputField({
                     type="number"
                     required
                     value={value}
-                    min={0}
+                    // min={0}
                     className="input w-full"
                     placeholder={`Masukkan angka ${index + 1}`}
                     onChange={(e) => onChange(index, e.target.value)}
