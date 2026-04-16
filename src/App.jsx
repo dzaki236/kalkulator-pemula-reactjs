@@ -1,6 +1,6 @@
 import './App.css'
 import { Routes, Route } from "react-router";
-import Tambah from './pages/tambah';
+import Tambah from './pages/Tambah';
 import Home from './pages/Home';
 import Kurang from './pages/Kurang';
 import Bagi from './pages/Bagi';
