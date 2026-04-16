@@ -1,5 +1,4 @@
 import { Link } from "react-router";
-// import r from "../hooks/randomParamsId";
 import paramsId from "../hooks/randomParamsId";
 const Home = () => {
     return (<>

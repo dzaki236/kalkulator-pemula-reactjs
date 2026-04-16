@@ -21,7 +21,7 @@ export default function useOperand(operationFunction) {
 
     const removeInput = async (index) => {
         const confirm = await Swal.fire({
-            title: "Hapus angka ini?",
+            title: `Hapus Angka ${index + 1}?`,
             text: "Angka yang dihapus tidak bisa dikembalikan!",
             icon: "warning",
             showCancelButton: true,
