@@ -22,56 +22,42 @@ function terbilang(a) {
         "Sembilan", "Sepuluh", "Sebelas"
     ];
 
-    let kalimat = "";
+    // helper biar gak nambah "Nol"
+    const gabung = (depan, sisa) => {
+        return sisa === 0 ? depan : depan + " " + terbilang(sisa);
+    };
 
     if (a === 0) {
         return "Nol";
     } else if (a < 12) {
-        kalimat = bilangan[a];
+        return bilangan[a];
     } else if (a < 20) {
-        kalimat = bilangan[a - 10] + " Belas";
+        return bilangan[a - 10] + " Belas";
     } else if (a < 100) {
-        kalimat =
-            terbilang(Math.floor(a / 10)) +
-            " Puluh " +
-            terbilang(a % 10);
+        const puluh = terbilang(Math.floor(a / 10)) + " Puluh";
+        return gabung(puluh, a % 10);
     } else if (a < 200) {
-        kalimat = "Seratus " + terbilang(a - 100);
+        return gabung("Seratus", a - 100);
     } else if (a < 1000) {
-        kalimat =
-            terbilang(Math.floor(a / 100)) +
-            " Ratus " +
-            terbilang(a % 100);
+        const ratus = terbilang(Math.floor(a / 100)) + " Ratus";
+        return gabung(ratus, a % 100);
     } else if (a < 2000) {
-        kalimat = "Seribu " + terbilang(a - 1000);
+        return gabung("Seribu", a - 1000);
     } else if (a < 1000000) {
-        kalimat =
-            terbilang(Math.floor(a / 1000)) +
-            " Ribu " +
-            terbilang(a % 1000);
+        const ribu = terbilang(Math.floor(a / 1000)) + " Ribu";
+        return gabung(ribu, a % 1000);
     } else if (a < 1000000000) {
-        kalimat =
-            terbilang(Math.floor(a / 1000000)) +
-            " Juta " +
-            terbilang(a % 1000000);
+        const juta = terbilang(Math.floor(a / 1000000)) + " Juta";
+        return gabung(juta, a % 1000000);
     } else if (a < 1000000000000) {
-        kalimat =
-            terbilang(Math.floor(a / 1000000000)) +
-            " Milyar " +
-            terbilang(a % 1000000000);
+        const miliar = terbilang(Math.floor(a / 1000000000)) + " Miliar";
+        return gabung(miliar, a % 1000000000);
     } else if (a < 1000000000000000) {
-        kalimat =
-            terbilang(Math.floor(a / 1000000000000)) +
-            " Triliun " +
-            terbilang(a % 1000000000000);
+        const triliun = terbilang(Math.floor(a / 1000000000000)) + " Triliun";
+        return gabung(triliun, a % 1000000000000);
     } else {
         return "Angka terlalu besar";
     }
-
-    return kalimat
-        .split(" ")
-        .filter(Boolean)
-        .join(" ");
 }
 
 export default terbilang;
